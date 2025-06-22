@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-KG-DAO: AI驱动的知识图谱增强型DAO框架</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* 使用柔和的背景色 */
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(165, 55, 253, 0.9) 100%);
+        }
+        .icon-bg {
+            background-color: #eef2ff;
+        }
+        .icon-color {
+            color: #4f46e5;
+        }
+        h2 {
+            scroll-margin-top: 80px; /* 调整锚点链接定位 */
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- 页面容器 -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- 导航栏 (可选，为了更好的用户体验) -->
+        <header class="sticky top-0 bg-white/80 backdrop-blur-md z-50 shadow-sm rounded-b-lg">
+            <nav class="flex items-center justify-between p-4">
+                <div class="text-xl font-bold text-indigo-600">AI-KG-DAO</div>
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#abstract" class="hover:text-indigo-600 transition-colors">摘要</a>
+                    <a href="#concepts" class="hover:text-indigo-600 transition-colors">核心概念</a>
+                    <a href="#framework" class="hover:text-indigo-600 transition-colors">框架设计</a>
+                    <a href="#application" class="hover:text-indigo-600 transition-colors">应用场景</a>
+                    <a href="#team" class="hover:text-indigo-600 transition-colors">研究团队</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- 主体内容 -->
+        <main class="py-12 sm:py-16">
+
+            <!-- 英雄区域 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+                    <span class="text-indigo-600">AI</span>驱动的<span class="text-purple-600">知识图谱</span>增强型<span class="text-sky-500">DAO</span>框架
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                    一个旨在通过人工智能和知识图谱技术，提升去中心化自治组织（DAO）的治理效率、透明度和智能化的新范式。
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#framework" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition-all">探索框架</a>
+                    <a href="https://github.com/CompReader2023/AI_KG_DAO" target="_blank" class="bg-white text-slate-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-slate-100 transition-all">查看源码</a>
+                </div>
+            </section>
+
+            <!-- 摘要部分 -->
+            <section id="abstract" class="mb-16 bg-white p-8 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 flex items-center">
+                    <!-- SVG icon for Abstract -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-500 mr-3"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    摘要 (Abstract)
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    去中心化自治组织（DAO）作为一种新兴的组织形式，在透明度和社区驱动方面展现出巨大潜力，但仍面临治理效率低下、信息过载和决策质量不高等挑战。本文提出了一种名为AI-KG-DAO的新型框架，旨在利用人工智能（AI）的分析与预测能力以及知识图谱（KG）的结构化信息表示能力，来增强DAO的运作。该框架通过构建DAO的专属知识图谱，整合链上交易、治理提案、社区讨论等多源异构数据，并利用AI模型进行智能分析、提案推荐和风险预警，从而实现更高效、更智能的去中心化治理。
+                </p>
+            </section>
+
+            <!-- 核心概念 -->
+            <section id="concepts" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">三大核心概念</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1: AI -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full icon-bg">
+                            <!-- SVG icon for AI -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-color"><path d="M12 8V4H8"></path><rect x="4" y="12" width="16" height="8" rx="2"></rect><path d="M12 12v8"></path><path d="M17.5 12.5a2.5 2.5 0 0 0-5 0"></path><path d="M12.5 12.5a2.5 2.5 0 0 1-5 0"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">人工智能 (AI)</h3>
+                        <p class="text-slate-600">在框架中扮演“智能大脑”的角色，负责处理复杂数据、识别模式、预测趋势并提供决策支持。</p>
+                    </div>
+                    <!-- Card 2: Knowledge Graph -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full icon-bg">
+                            <!-- SVG icon for KG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-color"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M10 21a2 2 0 0 1-4 0"></path><path d="M12 3v1"></path><path d="M6.38 5.38l-.71-.71"></path><path d="M17.62 5.38l.71-.71"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">知识图谱 (KG)</h3>
+                        <p class="text-slate-600">作为“结构化知识库”，将DAO内外的分散信息（如成员、提案、资产）连接成网，提供上下文关系。</p>
+                    </div>
+                    <!-- Card 3: DAO -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full icon-bg">
+                            <!-- SVG icon for DAO -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-color"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">去中心化自治组织 (DAO)</h3>
+                        <p class="text-slate-600">是该框架的应用实体，一个由社区成员共同拥有和管理的、基于区块链的组织。</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 框架设计 -->
+            <section id="framework" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">AI-KG-DAO 框架设计</h2>
+                <div class="relative">
+                    <!-- 背景图片 -->
+                    <img src="https://placehold.co/1200x600/e0e7ff/4f46e5?text=Framework+Diagram" alt="框架示意图" class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-20">
+                    <div class="relative bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <!-- Step 1: Data Collection -->
+                            <div class="flex flex-col items-center">
+                                <div class="font-bold text-lg bg-indigo-100 text-indigo-800 rounded-full w-12 h-12 flex items-center justify-center mb-3">1</div>
+                                <h4 class="font-bold text-lg mb-2">数据层</h4>
+                                <p class="text-slate-600 text-sm">收集链上（交易、投票）和链下（论坛、社交媒体）的多源异构数据。</p>
+                            </div>
+                             <!-- Arrow -->
+                            <div class="hidden md:flex items-center justify-center text-indigo-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                            <!-- Step 2: KG Construction -->
+                            <div class="flex flex-col items-center">
+                                <div class="font-bold text-lg bg-purple-100 text-purple-800 rounded-full w-12 h-12 flex items-center justify-center mb-3">2</div>
+                                <h4 class="font-bold text-lg mb-2">知识层</h4>
+                                <p class="text-slate-600 text-sm">构建DAO知识图谱，对数据进行实体、关系和属性的抽取与链接。</p>
+                            </div>
+                            <!-- Arrow -->
+                             <div class="hidden md:flex items-center justify-center text-indigo-400">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                             <!-- Step 3: AI Empowerment -->
+                            <div class="flex flex-col items-center">
+                                <div class="font-bold text-lg bg-sky-100 text-sky-800 rounded-full w-12 h-12 flex items-center justify-center mb-3">3</div>
+                                <h4 class="font-bold text-lg mb-2">智能层</h4>
+                                <p class="text-slate-600 text-sm">利用AI模型（如LLMs、GNNs）进行分析、推荐、预测和自然语言交互。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 应用场景 -->
+            <section id="application" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">主要应用场景</h2>
+                 <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-green-100 text-green-600">✓</div>
+                        <div>
+                            <h4 class="font-bold">智能提案评估</h4>
+                            <p class="text-slate-600 text-sm">自动分析提案的可行性、潜在影响和与历史提案的关联性。</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-green-100 text-green-600">✓</div>
+                        <div>
+                            <h4 class="font-bold">个性化信息推送</h4>
+                            <p class="text-slate-600 text-sm">根据成员的兴趣和历史行为，精准推送相关的治理信息。</p>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-green-100 text-green-600">✓</div>
+                        <div>
+                            <h4 class="font-bold">社区健康度分析</h4>
+                            <p class="text-slate-600 text-sm">监控社区活跃度、情绪倾向和关键意见领袖，防范女巫攻击。</p>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-md flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-green-100 text-green-600">✓</div>
+                        <div>
+                            <h4 class="font-bold">智能问答机器人</h4>
+                            <p class="text-slate-600 text-sm">提供一个能理解自然语言并基于知识图谱回答问题的DAO助手。</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+             <!-- 研究团队 -->
+            <section id="team" class="text-center bg-white py-16 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">研究团队</h2>
+                <p class="text-slate-600 mb-8">本研究由以下成员共同完成</p>
+                <div class="flex justify-center items-center space-x-8 text-slate-700 font-medium">
+                    <span>X. Wu</span>
+                    <span>H. Wu</span>
+                    <span>W. Wang</span>
+                    <span>H. Xu</span>
+                    <span>Z. Zheng</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="text-center py-8 border-t border-slate-200">
+            <p class="text-sm text-slate-500">&copy; 2023 CompReader. All rights reserved. Redesigned for interactive presentation.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
