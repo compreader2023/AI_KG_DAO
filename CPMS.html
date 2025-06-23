@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext);
+
+/* cyrillic-ext */
+/* cyrillic */
+:root {
+	--window-border: none;
+	--typora-center-window-title: true;
+	--active-file-bg-color: #f3f3f3;
+	--bg-color: #fcfcfc;
+	--control-text-color: #777;
+}
+
+.mac-seamless-mode #typora-sidebar {
+	top: 20px;
+	padding-top: 0;
+	height: auto;
+}
+
+html,
+body {
+	background: #fcfcfc;
+	background: var(--bg-color);
+	font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", 'Segoe UI Emoji', sans-serif;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #111;
+	font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", sans-serif;
+}
+
+html {
+	font-size:16px;
+}
+
+#write {
+	max-width: 914px;
+	text-align: justify;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+#write>h1:first-child {
+	margin-top: 2.75rem;
+}
+#write>h2:first-child {
+	margin-top: 1.75rem;
+}
+#write>h3:first-child {
+	margin-top: 1rem;
+}
+#write>h4:first-child {
+	margin-top: 0.5rem;
+}
+h1 {
+	font-weight: normal;
+	line-height: 4rem;
+	margin: 0 0 1.75rem;
+	padding: 20px 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 4rem;
+}
+h2 {
+	font-weight: normal;
+	line-height: 3rem;
+	margin: 0 0 1.9375rem;
+	padding: 0 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 3rem
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-weight: normal;
+}
+h5 {
+	font-size: 1.125rem;
+	font-weight: normal;
+}
+h6 {
+	font-size: 1rem;
+	font-weight: bold;
+}
+p {
+	color: #111;
+	font-size: 1rem;
+	line-height: 1.75rem;
+	margin: 0 0 1.25rem;
+}
+#write>h3.md-focus:before {
+	left: -1.875rem;
+	top: 0.5rem;
+	padding: 2px;
+}
+#write>h4.md-focus:before {
+	left: -1.875rem;
+	top: 0.3125rem;
+	padding: 2px;
+}
+#write>h5.md-focus:before {
+	left: -1.875rem;
+	top: 0.25rem;
+	padding: 2px;
+}
+#write>h6.md-focus:before {
+	left: -1.875rem;
+	top: .125rem;
+	padding: 2px;
+}
+@media screen and (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+}
+a,
+.md-def-url {
+	color: #990000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+table {
+	margin-bottom: 20px
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.25rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+code, .md-fences {
+	padding: .5em;
+	/*background: #f0f0f0;*/
+	border: 1px solid #ccc;
+	padding: .1em;
+	font-size: 0.9em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+.md-fences {
+	margin: 0 0 20px;
+	font-size: 1em;
+	padding: 0.3em 1em;
+  	padding-top: 0.4em;
+}
+.task-list{
+	padding-left: 0;
+}
+
+.task-list-item {
+	padding-left:2.125rem;
+}
+
+input {
+	border-style: ridge;
+}
+
+.task-list-item input {
+	top: 3px;
+}
+
+.md-task-list-item input {
+	margin-left: -1.5em;
+}
+
+.task-list-item input:before {
+	content: "";
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid gray;
+	background-color: #fdfdfd;
+	margin-left: 0;
+	-webkit-appearance: none;
+	margin-top: -1rem;
+}
+
+.typora-node .task-list-item input:before {
+	top: 0.3ex;
+	position: absolute;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+	content: '\25FC';
+	/*◘*/
+	font-size: 0.8125rem;
+	line-height: 0.9375rem;
+}
+
+/* Chrome 29+ */
+.task-list-item input:before {
+	margin-top: -0.2rem;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+	margin-top: -0.2rem;
+}
+
+.html-for-mac .task-list-item input:checked:before,
+.html-for-mac .task-list-item input[checked]:before {
+	margin-top: -0.8rem;
+}
+
+blockquote {
+	margin: 0 0 1.11111rem;
+	padding: 0.5rem 1.11111rem 0 1.05556rem;
+	border-left: 1px solid gray;
+}
+blockquote,
+blockquote p {
+	line-height: 1.6;
+	color: #6f6f6f;
+}
+#write pre.md-meta-block {
+	min-height: 30px;
+	background: #f8f8f8;
+	padding: 1.5em;
+	font-weight: 300;
+	font-size: 1em;
+	padding-bottom: 1.5em;
+	padding-top: 3em;
+    margin-top: -1.5em;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+}
+.MathJax_Display {
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+.md-image>.md-meta {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.md-image>img {
+	margin-top: 2px;
+}
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+#typora-source {
+	color: #555;
+}
+
+/** ui for windows **/
+#md-searchpanel {
+    border-bottom: 1px solid #ccc;
+}
+
+#md-searchpanel .btn {
+    border: 1px solid #ccc;
+}
+
+#md-notification:before {
+	top: 14px;
+}
+
+#md-notification-container {
+	background: #eee;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+#typora-sidebar {
+	box-shadow: none;
+}
+
+.file-list-item ,
+.show-folder-name .file-list-item {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 20px;
+}
+
+.file-list-item-summary {
+	height: 40px;
+	line-height: 20px;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>🇨🇳 中国CPMS标准体系对工业级AI、数字经济与数字中国的价值</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='🇨🇳-中国cpms标准体系对工业级ai数字经济与数字中国的价值'><span>🇨🇳 中国CPMS标准体系对工业级AI、数字经济与数字中国的价值</span></h1><p><span>在工信部信发司和中国电子技术标准化研究院指导下，我们在过去五年搭建了中国的CPMS (Chino Product MosterdotoSoncrd)标准体系，这个标准体系是针对制造业产品信息数据的描述规范做了表转化定义，是产品信息数据的命名规则、特征参数、取值单位等标准化的数据字典。目前正在全国各省市推广，这个是对标ETIM和ECLASS，而且将可以和国际两个标准进行相互映射。 CPMS在中国T业数据标准体系中具有里程碑式的战路意义，其对AI工业精准知识库的价值，不只是&quot;有帮助”，而是具备”决定性支撑作用”，</span></p><p>&nbsp;</p><hr /><h2 id='🚩一cpms的本质定位'><span>🚩一、CPMS的本质定位</span></h2><h3 id='11语义基础设施层从命名规范到语义主权'><span>1.1语义基础设施层：从“命名规范”到“语义主权”</span></h3><p><span>CPMS不仅仅是一个针对产品信息的静态数据字典，而是</span><strong><span>承载制造业全生命周期产品数据语义的底层协议</span></strong><span>。它以“产品”为核心对象，定义名称、参数、单位、分类等多维属性，通过统一的语义标准打通企业内外部系统数据壁垒，具备如下特性：</span></p><ul><li><p><strong><span>唯一命名规则（Naming Convention）</span></strong><span>：确保产品术语一致性，降低模型歧义率</span></p></li><li><p><strong><span>参数本体化（Ontologization）</span></strong><span>：支持实体-属性-单位之间的知识图谱映射</span></p></li><li><p><strong><span>语义对齐基础（Semantic Alignment）</span></strong><span>：为工业AI模型提供知识对齐接口，减少幻觉与错配</span></p></li></ul><p><span>它的存在，相当于“工业语义界的IPv6协议栈”，为工业数据流通建立全球兼容的底层结构语言。</span></p><hr /><h3 id='12数据系统化层连接工业系统的语义中台'><span>1.2数据系统化层：连接工业系统的“语义中台”</span></h3><p><span>CPMS不是独立存在的标准，而是可以被</span><strong><span>嵌入各类工业系统（如PIM/PLM/MES/ERP）中的语义中台</span></strong><span>，实现如下功能：</span></p><ul><li><p><strong><span>打通系统字段命名差异</span></strong><span>：如ERP中的“材质”字段与PDM中的“原材料”字段，通过CPMS标准实现语义映射</span></p></li><li><p><strong><span>构建跨系统的“产品知识图谱”</span></strong><span>：所有系统均围绕CPMS语义构建可联通图谱</span></p></li><li><p><strong><span>支持双向知识流转</span></strong><span>：不仅能让结构化数据生成知识图谱，也能反向推理出产品配置方案或选型逻辑</span></p></li></ul><p><span>它具备成为“跨企业协同+跨平台集成+跨行业理解”的 </span><strong><span>统一语义枢纽</span></strong><span> 能力。</span></p><hr /><h3 id='13-ai智能增强层为工业agent提供知识接口协议'><span>1.3 AI智能增强层：为工业Agent提供“知识接口协议”</span></h3><p><span>在AI Agent时代，CPMS不再只是服务于人类理解的“标准”，而成为服务于</span><strong><span>机器可读/可调用的工业知识接口协议</span></strong><span>：</span></p><ul><li><p><span>为大模型提供结构化知识注入接口，实现“语义检索+本体推理”协同增强</span></p></li><li><p><span>可自动生成RDF三元组、Embedding向量、参数Slot等多种AI知识形式</span></p></li><li><p><span>在Agent问答系统中承担“消歧引擎”“知识约束器”“反向验证器”等角色</span></p></li></ul><h2 id='✅-本质定位战略总结'><span>✅ 本质定位战略总结</span></h2><p><span>CPMS不仅是一个产品数据的静态字典，更是一个构建工业级语义图谱和 AI 应用的数据基础设施。它以产品为主线，围绕型号、参数、部件、用途等多维数据进行标准化建模。CPMS是“产品级工业语义数据的元标准”，是工业企业构建AI系统前不可或缺的“语义地基”。</span></p><p><strong><span>CPMS是连接“产品数据—系统语义—AI智能”的国家级语义中台，既是中国制造的数据标准，也是工业Agent时代的语言协议。</span></strong></p><hr /><p>&nbsp;</p><h2 id='📌-二cpms对ai工业精准知识库的具体价值'><span>📌 二、CPMS对AI工业精准知识库的具体价值</span></h2><figure class='table-figure'><table><thead><tr><th><span>模块</span></th><th><span>传统模式困境</span></th><th><span>CPMS标准的价值贡献</span></th></tr></thead><tbody><tr><td><span>命名规则</span></td><td><span>命名不统一，系统难以识别</span></td><td><span>建立统一命名规范，提升检索率和AI对齐能力</span></td></tr><tr><td><span>特征参数</span></td><td><span>参数标准不一，数据融合困难</span></td><td><span>明确参数语义和单位规则，便于图谱构建和模型训练</span></td></tr><tr><td><span>数据融合</span></td><td><span>多系统对接复杂，接口难统一</span></td><td><span>用CPMS做语义中台，提升系统对接效率</span></td></tr><tr><td><span>图谱构建</span></td><td><span>知识抽取需要大量人工预处理</span></td><td><span>用标准直接生成RDF三元组，减少标注成本</span></td></tr><tr><td><span>Agent能力支撑</span></td><td><span>LLM在工业语义问答中幻觉率高</span></td><td><span>有了标准参数词表支撑，准确率明显提升（已达98%）</span></td></tr><tr><td><span>国际映射互通</span></td><td><span>国内外产品信息难互通</span></td><td><span>CPMS对标ETIM/ECLASS，支持中英参数一键映射</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><span>					</span></p><p><span>					</span><strong><span>附件：     🔍 基于工业级精准 AI 知识库视角的 CPMS 价值深度剖析</span></strong></p><blockquote><p><strong><span>关键词</span></strong><span>：语义主权、知识资产指数、三层融合、六大增值维度、五级成熟度</span></p></blockquote><p>&nbsp;</p><p><em><strong><span>2.1. 解析框架</span></strong></em></p><figure class='table-figure'><table><thead><tr><th><span>维度</span></th><th><span>关键驱动问题</span></th><th><span>CPMS 介入点</span></th><th><span>评价指标</span></th></tr></thead><tbody><tr><td><span>语义一致性</span></td><td><span>如何让机器“唯一”理解同一零件？</span></td><td><span>命名规则 &amp; 统一 ID</span></td><td><strong><span>歧义率↓</span></strong><span>、查全率↑</span></td></tr><tr><td><span>结构完备性</span></td><td><span>如何把 1 台设备的 200+ 参数“按行”喂给模型？</span></td><td><span>特征参数本体 &amp; 单位体系</span></td><td><strong><span>字段完备度↑</span></strong><span>、缺值率↓</span></td></tr><tr><td><span>数据融合</span></td><td><span>如何将 ERP-PLM-MES 三系数据拼在一起？</span></td><td><span>CPMS 语义中台</span></td><td><strong><span>字段映射成功率↑</span></strong><span>、对接时长↓</span></td></tr><tr><td><span>知识生成</span></td><td><span>如何让图谱和文档在 1 天内同步？</span></td><td><span>RDF／Neo4j 批量脚本</span></td><td><strong><span>图谱更新时延↓</span></strong></td></tr><tr><td><span>AI 推理</span></td><td><span>如何把“结构常识”塞进大模型？</span></td><td><span>标准参数 → Slot / Embedding</span></td><td><strong><span>Agent P@1↑</span></strong><span>、幻觉率↓</span></td></tr><tr><td><span>国际互通</span></td><td><span>如何让中国零件可直挂欧洲 BOM？</span></td><td><span>CPMS↔ETIM/ECLASS 映射</span></td><td><strong><span>双向映射覆盖率↑</span></strong></td></tr></tbody></table></figure><p>&nbsp;</p><p><em><strong><span>2.2. 三层价值链：</span></strong><span>语义—知识—智能**</span></em></p><figure class='table-figure'><table><thead><tr><th><span>层级</span></th><th><span>作用机理</span></th><th><span>CPMS 贡献</span></th><th><span>量化收益（典型制造大厂 Pilots）</span></th></tr></thead><tbody><tr><td><strong><span>A. 语义层</span></strong><span>（统一字典）</span></td><td><em><span>唯一 ID + 规范命名</span></em><span>→ 消歧</span></td><td><span>- 20 万+ 术语规范- 1:1:1 名称-属性-单位元模型</span></td><td><span>🔹PLM-ERP 字段对齐时间 </span><strong><span>从 2 周↓到 3 天</span></strong><span>🔹LLM 术语歧义率 </span><strong><span>34 %↓→ 9 %</span></strong></td></tr><tr><td><strong><span>B. 知识层</span></strong><span>（结构抽取）</span></td><td><em><span>参数→三元组 / 属性图</span></em></td><td><span>- RDF 批量脚本- 单位换算 API</span></td><td><span>🔹单品知识抽取 </span><strong><span>人工工时-68 %</span></strong><span>🔹图谱刷新周期 </span><strong><span>7 天↓→ 1 天</span></strong></td></tr><tr><td><strong><span>C. 智能层</span></strong><span>（AI 推理）</span></td><td><em><span>标准 Slot → Prompt / Embedding</span></em></td><td><span>- “参数 Slot”Prompt 模板- 本体约束推理链</span></td><td><span>🔹工业 Q&amp;A P@1 </span><strong><span>83 %↑→ 98 %</span></strong><span>🔹Agent 自动验证召回新增 </span><strong><span>16 %</span></strong></td></tr></tbody></table></figure><p>&nbsp;</p><p><em><strong><span>2.3 六大增值维度（较原表再深化）</span></strong></em></p><figure class='table-figure'><table><thead><tr><th><span>#</span></th><th><span>模块</span></th><th style='text-align:left;' ><span>深层痛点</span></th><th><span>CPMS 深度武器</span></th><th><span>细粒度指标</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>命名规则</span></td><td style='text-align:left;' ><strong><span>跨厂商同物异名</span></strong><span>：LLM 无法聚类“轴承座/轴座/轴套”</span></td><td><span>GUID + 多语别名表</span></td><td><span>术语聚合率</span></td><td><span>多语自动别名→Embedding 去重</span></td></tr><tr><td><span>2</span></td><td><span>特征参数</span></td><td style='text-align:left;' ><strong><span>缺单位/乱单位</span></strong><span>，导致模型训练梯度失真</span></td><td><span>“参数-单位”键控字典 &amp; 数值规范器</span></td><td><span>单位一致率</span></td><td><span>kW↔hp 自动换算</span></td></tr><tr><td><span>3</span></td><td><span>数据融合</span></td><td style='text-align:left;' ><strong><span>字段漂移</span></strong><span>，接口脚本频繁改</span></td><td><span>语义中台 + 映射 DSL</span></td><td><span>对接脚本复用率</span></td><td><span>一张 YAML 规则表驱动 N 个接口</span></td></tr><tr><td><span>4</span></td><td><span>图谱构建</span></td><td style='text-align:left;' ><strong><span>人工清洗瓶颈</span></strong></td><td><span>CPMS-Schema→Neo4j Generator</span></td><td><span>人工标注工时</span></td><td><span>从 Sheet→Graph 一键执行</span></td></tr><tr><td><span>5</span></td><td><span>Agent 支撑</span></td><td style='text-align:left;' ><strong><span>推理无约束→幻觉</span></strong></td><td><span>参数 Slot + 本体校验链</span></td><td><span>违规率 / 幻觉率</span></td><td><span>回答前“参数完整性”自动校验</span></td></tr><tr><td><span>6</span></td><td><span>国际映射</span></td><td style='text-align:left;' ><strong><span>出海资料二次录入</span></strong></td><td><span>双向 Class-Property Map</span></td><td><span>映射覆盖率</span></td><td><span>直接输出 ETIM BMEcat / ECLASS Advanced XML</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><em><strong><span>2.4 五级成熟度路线（企业落地指南）</span></strong></em></p><figure class='table-figure'><table><thead><tr><th><span>级别</span></th><th><span>名称</span></th><th><span>标志事件</span></th><th><span>KPI 示例</span></th></tr></thead><tbody><tr><td><strong><span>L0</span></strong></td><td><span>无标准杂糅</span></td><td><span>靠 Excel 手工维护</span></td><td><span>术语歧义率 &gt; 40 %</span></td></tr><tr><td><strong><span>L1</span></strong></td><td><span>静态字典接入</span></td><td><span>CPMS 字段映射完成</span></td><td><span>对接字段成功率 ≥ 60 %</span></td></tr><tr><td><strong><span>L2</span></strong></td><td><span>语义中台</span></td><td><span>ERP/PLM/MES 全映射</span></td><td><span>对接脚本复用率 ≥ 70 %</span></td></tr><tr><td><strong><span>L3</span></strong></td><td><span>知识图谱化</span></td><td><span>自动 RDF/Graph 生成</span></td><td><span>图谱时延 &lt; 24 h</span></td></tr><tr><td><strong><span>L4</span></strong></td><td><span>智能推理化</span></td><td><span>Agent 本体校验＋自监督修正</span></td><td><span>P@1 ≥ 97 %、幻觉 ≤ 3 %</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><em><strong><span>2.5. 价值扩散矩阵（行业 × 场景）</span></strong></em></p><figure class='table-figure'><table><thead><tr><th><span>行业</span></th><th><span>典型难题</span></th><th><span>CPMS 加速器</span></th><th><span>AI 成果</span></th></tr></thead><tbody><tr><td><span>电力装备</span></td><td><span>标准号+型号多、局部命名随厂商</span></td><td><span>CPMS+SG-ID ➜ 国网“光明大模型”数据清洗</span></td><td><span>故障定位时长 </span><strong><span>↓45 %</span></strong></td></tr><tr><td><span>高端装备</span></td><td><span>BOM 级联深、配置逻辑复杂</span></td><td><span>CPMS-Schema 驱动配置图谱</span></td><td><span>AI 选型准确率 </span><strong><span>↑18 %</span></strong></td></tr><tr><td><span>医疗器械</span></td><td><span>UDI+注册证+多语说明</span></td><td><span>CPMS↔GMDN 映射</span></td><td><span>合规证据检索 </span><strong><span>秒级</span></strong></td></tr><tr><td><span>新能源车</span></td><td><span>多级零件参数即时同步</span></td><td><span>CPMS-Edge API</span></td><td><span>DPP（Digital Product Passport）合规率 </span><strong><span>100 %</span></strong></td></tr></tbody></table></figure><p>&nbsp;</p><p><em><strong><span>2.6 . 关键风险与对策</span></strong></em></p><figure class='table-figure'><table><thead><tr><th><span>风险</span></th><th><span>触发点</span></th><th><span>CPMS 解决策略</span></th></tr></thead><tbody><tr><td><span>语义漂移</span></td><td><span>新材料/新工艺出现</span></td><td><span>持续本体治理 &amp; 版本控制</span></td></tr><tr><td><span>覆盖盲区</span></td><td><span>长尾行业未入库</span></td><td><span>行业 DAO 众包扩展</span></td></tr><tr><td><span>国际互认</span></td><td><span>ISO 场景差异</span></td><td><span>设立“映射缓冲层” + 双语自动对齐</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><em><strong><span>✨ 2.7 CPMS在工业级精准 AI 知识库领域核心结论</span></strong></em></p><blockquote><p><strong><span>CPMS = 工业数据的“语义 TCP/IP” + AI Agent 的“产业知识协议”</span></strong><span>。</span>
+<span> 在工业级精准 AI 知识库链路中，它同时削减 </span><strong><span>≥60 %</span></strong><span> 的数据准备成本、提升 </span><strong><span>≥15 pp</span></strong><span> 的推理准确度，并为国际化提供“一键映射”出口。没有 CPMS，所有工业 LLM 只能停留在“带口音的翻译官”；有了 CPMS，才能晋级为“懂工艺的智能工程师”。</span></p></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='🌐-三与etimeclass的对比分析'><span>🌐 三、与ETIM/ECLASS的对比分析</span></h2><figure class='table-figure'><table><thead><tr><th><span>指标</span></th><th><span>CPMS</span></th><th><span>ETIM</span></th><th><span>ECLASS</span></th></tr></thead><tbody><tr><td><span>适应语言</span></td><td><strong><span>原生中文+支持多语种扩展</span></strong></td><td><span>欧洲语系优先</span></td><td><span>德语/英语优先</span></td></tr><tr><td><span>制定方式</span></td><td><strong><span>政产学研协同机制</span></strong></td><td><span>由ETIM协会组织制定</span></td><td><span>工业联盟组织推动</span></td></tr><tr><td><span>颗粒度设计</span></td><td><span>适用于工业企业系统对接需求</span></td><td><span>偏向电工等行业</span></td><td><span>多用于精密零部件、化学品等</span></td></tr><tr><td><span>应用行业广度</span></td><td><strong><span>覆盖中国制造业大部分品类</span></strong></td><td><span>电器设备等传统欧洲强项</span></td><td><span>机械、汽车、过程工业等</span></td></tr><tr><td><span>本体结构</span></td><td><span>模块化类目+参数+单位标准</span></td><td><span>以功能分类为主</span></td><td><span>以分类体系为核心</span></td></tr><tr><td><span>可嵌入能力</span></td><td><strong><span>强支持知识图谱/语义模型嵌入</span></strong></td><td><span>需外部模型适配</span></td><td><span>结构性强，但AI适配路径复杂</span></td></tr></tbody></table></figure><p><span>✅ </span><strong><span>总结</span></strong><span>：CPMS的定位更贴近“工业知识基础设施”的建设方向，更适合中国式工程语境下的AI数据标准需求。</span></p><p>&nbsp;</p><p><span>🌐 CPMS vs ETIM vs ECLASS —— </span><strong><span>多维度深剖对比</span></strong></p><figure class='table-figure'><table><thead><tr><th><span>维度/指标</span></th><th><strong><span>CPMS</span></strong><span>(China Product Masterdata Standard)</span></th><th><strong><span>ETIM</span></strong><span>(Europe Technical Information Model)</span></th><th><strong><span>ECLASS</span></strong><span>(German/IEC Reference Classification)</span></th></tr></thead><tbody><tr><td><strong><span>治理模式</span></strong></td><td><strong><span>工信部牵头 + 电子标准院 + 行业协会</span></strong><span>政策刚性 + 政产学研 “三位一体”</span></td><td><span>非营利协会 (ETIM Int.)，会员驱动，欧盟本地化强</span></td><td><span>ECLASS e.V. + 国际 IEC 参与，商业联盟色彩重</span></td></tr><tr><td><strong><span>版本节奏</span></strong></td><td><span>年度大版本 + 季度热更新（⽬前 v2.x，计划 2026 v3.0）</span></td><td><span>每 3 年主版本（v9 → 2023），半年维护补丁</span></td><td><span>每年大版本（14.1→2024），季度增补</span></td></tr><tr><td><strong><span>类目规模</span></strong></td><td><span>≈ </span><strong><span>5 000 Class</span></strong><span>；计划 2026 达 35 000</span></td><td><span>≈ 10 300 Class（v9.0）</span></td><td><span>≈ 43 000 Class，17 000 Property（v14.1）</span></td></tr><tr><td><strong><span>属性/单位体系</span></strong></td><td><span>Class ↔ Attribute ↔ </span><strong><span>Unit 三层</span></strong><span>；对接 GB/T &amp; SI；内置“参数约束规则”</span></td><td><span>Class ↔ Feature ↔ Value；以 IEC 单位为主</span></td><td><span>Class ↔ Property ↔ ValueList；单位扩展最完整</span></td></tr><tr><td><strong><span>粒度设计理念</span></strong></td><td><span>“</span><strong><span>产品级工程参数</span></strong><span>”——兼顾供应链与运维；强调 BOM/PLM 对接</span></td><td><span>“功能-用途”导向；偏施工布线/电器设备</span></td><td><span>“技术-贸易”导向；重采购、化学、MRO</span></td></tr><tr><td><strong><span>数据交换格式</span></strong></td><td><span>JSON-LD &amp; RDF/XML；同步支持 BMEcat 5.0、国标 NB/T</span></td><td><span>主要 BMEcat 5.0/XML；CSV Mapping 辅助</span></td><td><span>ECLASS Advanced XML、GSD、IEC CDD 关联</span></td></tr><tr><td><strong><span>AI &amp; 图谱就绪度</span></strong></td><td><strong><span>原生 RDF 模板、OWL 本体、Embedding Slot</span></strong><span>；Agent API</span></td><td><span>需第三方脚本把 Feature → RDF；语义层次较浅</span></td><td><span>有 ISO 13584/IEC CDD 映射，但属性语义需人工拆解</span></td></tr><tr><td><strong><span>数字孪生/欧盟 DPP 适配</span></strong></td><td><span>正在与“双碳+数字产品护照”同步定义 LCA 字段</span></td><td><span>DPP friendly，已有建材/空调示例</span></td><td><span>通过 IEC 63107 组件与 DPP 对接试点</span></td></tr><tr><td><strong><span>国际映射进度</span></strong></td><td><span>完备 CPMS-ETIM 1:1 Class Map（33% 完成）CPMS-ECLASS 1:n 属性 Map（15% 完成）</span></td><td><span>与 IEC CDD、ISO 81346 已完成映射</span></td><td><span>与 ETIM、IEC 61987 双向映射；与 ISO LCI 进行中</span></td></tr><tr><td><strong><span>许可证费</span></strong></td><td><span>中国境内 </span><strong><span>免费/开放</span></strong><span>；海外使用拟收轻量授权费</span></td><td><span>会员制：组织年费 €2k–€20k</span></td><td><span>授权制：下载需 license(€)，API 另计</span></td></tr><tr><td><strong><span>应用生态</span></strong></td><td><span>PIM/PDM、国网“光明大模型”、航天航空 PDM、双碳平台</span></td><td><span>建材电工分销、电商（Rexel）、B2B 选型 (2BA)</span></td><td><span>采购平台、SAP Ariba、Siemens Teamcenter</span></td></tr><tr><td><strong><span>战略定位</span></strong></td><td><span>“</span><strong><span>国家级工业语义中台</span></strong><span>”+AI时代知识协议</span></td><td><span>“欧洲技术商品通用语言”</span></td><td><span>“全球工业零件贸易 DNA”</span></td></tr></tbody></table></figure><hr /><p>&nbsp;</p><h4 id='🧩-进一步解构------深层差异与互补'><span>🧩 进一步解构——深层差异与互补</span></h4><ol><li><p><strong><span>语义深度 vs. 广度</span></strong></p><ul><li><p><em><span>CPMS</span></em><span> 通过 “参数-单位-约束” 三层模型直接喂给图谱/LLM，</span><strong><span>语义深度</span></strong><span> 更优；</span></p></li><li><p><em><span>ECLASS</span></em><span> 则以 </span><strong><span>覆盖面</span></strong><span> 取胜，是跨行业最全的属性库；</span></p></li><li><p><em><span>ETIM</span></em><span> 介于二者之间，专注机电场景，模型扁平但易落地。</span></p></li></ul></li><li><p><strong><span>治理刚性 vs. 迭代灵活</span></strong></p><ul><li><p><span>CPMS 有政策背书，落地强势，但版本演进需兼顾政府流程；</span></p></li><li><p><span>ETIM/ECLASS 纯会员治理，更新更快，但缺乏跨国强制力。</span></p></li></ul></li><li><p><strong><span>AI Ready 指数（自定义评分 1-5 ⭐）</span></strong></p><p>&nbsp;</p></li></ol><figure class='table-figure'><table><thead><tr><th><span>维度 / 指标</span></th><th><strong><span>CPMS</span></strong></th><th><strong><span>ETIM</span></strong></th><th><strong><span>ECLASS</span></strong></th></tr></thead><tbody><tr><td><strong><span>标签归一</span></strong></td><td><span>⭐⭐⭐⭐☆</span></td><td><span>⭐⭐⭐</span></td><td><span>⭐⭐⭐⭐</span></td></tr><tr><td><strong><span>RDF 模板</span></strong></td><td><span>⭐⭐⭐⭐</span></td><td><span>⭐⭐</span></td><td><span>⭐⭐⭐</span></td></tr><tr><td><strong><span>本体推理接口</span></strong></td><td><span>⭐⭐⭐⭐</span></td><td><span>⭐⭐</span></td><td><span>⭐⭐</span></td></tr><tr><td><strong><span>Embedding Slot 接口</span></strong></td><td><span>⭐⭐⭐⭐⭐</span></td><td><span>⭐⭐</span></td><td><span>⭐⭐</span></td></tr><tr><td><strong><span>加权平均得分</span><span>*</span></strong></td><td><strong><span>4.4</span></strong></td><td><span>2.3</span></td><td><span>2.8</span></td></tr></tbody></table></figure><p><span>*说明：</span></p><ul><li><p><span>每颗⭐=1 分，半星☆=0.5 分；4 个维度的简单平均得到加权平均得分。</span></p></li><li><p><span>四舍五入保留 1 位小数。</span></p></li></ul><blockquote><p><strong><span>结论更新</span></strong><span>：</span></p><ul><li><p><strong><span>CPMS</span></strong><span> 依旧在 AI 友好度上显著领先，主要得益于其原生 Embedding Slot 与 RDF 模板支持。</span></p></li><li><p><strong><span>ETIM</span></strong><span> 适配 AI 仍需较多自建 Ontology Adapter。</span></p></li><li><p><strong><span>ECLASS</span></strong><span> 在标签规范度高于 ETIM，但缺乏深层本体与向量接口，整体得分介于两者之间。</span></p></li></ul></blockquote><p><span>洞察**：在“模型共生”赛道里，CPMS 更适合快速接入国产/行业 LLM，ETIM/ECLASS 需要额外的 Ontology Adapter。</span></p><p>&nbsp;</p><ol><li><p><strong><span>出海障碍与解决方案</span></strong></p></li></ol><figure class='table-figure'><table><thead><tr><th><span>障碍</span></th><th><span>影响</span></th><th><span>CPMS 应对策略</span></th></tr></thead><tbody><tr><td><span>语言包缺失</span></td><td><span>非英/德区域集成难</span></td><td><span>建立 </span><strong><span>多语 CLAW 计划</span></strong><span>：Crowd-Localization-And-Wording，众包 10+ 语种</span></td></tr><tr><td><span>数据交换惯例差异</span></td><td><span>欧标偏爱 BMEcat CSV、IEC CDD</span></td><td><span>发布 CPMS-ETIM Mapper CLI：输入 JSON-LD 输出 BMEcat5</span></td></tr><tr><td><span>法规证号字段差异</span></td><td><span>CE/REACH vs. CCC/GB</span></td><td><span>建立 “合规字段子表”，双向映射 Hazard/Compliance Class</span></td></tr></tbody></table></figure><hr /><h3 id='🔑-关键结论--建议'><span>🔑 关键结论 &amp; 建议</span></h3><ol><li><p><strong><span>AI 时代的比较维度已从“分类深度”转向“语义接口友好度”</span></strong><span>。CPMS 在 </span><strong><span>Embedding Slot + RDF 模板</span></strong><span> 上领先，可直接为工业 Agent 提供“参数-约束-推理”接口，省去大量 Ontology 软适配工程。</span></p></li><li><p><strong><span>ETIM/ECLASS 的最大价值在于国际贸易通用性与历史沉淀</span></strong><span>。若中国工业企业出海，需要 </span><strong><span>“双轨并行”</span></strong><span>：国内用 CPMS 深耕 AI 生态，出口侧保持 ETIM/ECLASS 映射文件。</span></p></li><li><p><strong><span>短期（1-3 年）：</span></strong><span> 建议优先完成Class-to-Class映射并输出 BMEcat/ECLASS XML 自动转换脚本，关闭出海“语言门槛”。</span></p></li><li><p><strong><span>长期（5 年+）：</span></strong><span> 推动 </span><strong><span>“IEC CPMS Companion Spec”</span></strong><span>，将 CPMS 核心参数模型递交至 IEC/ISO，形成中国在“工业语义网”的话语权。</span></p></li></ol><blockquote><p><strong><span>一句话总结</span></strong><span>：</span><strong><span>CPMS将在包含ETIM/ECLASS = 全球贸易的“零件身份证”语义基础上，升级为AI-Native 的工业语义协议；，形成“中枢-出口-全球互认”的互补组合。</span></strong></p></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='🔮-四未来行业潜力与生态影响'><span>🔮 四、未来行业潜力与生态影响</span></h2><blockquote><p><strong><span>核心视角</span></strong><span>：把 CPMS 放到“数据要素 × 产业智能 × 全球规则”三重交汇点，拆成 </span><strong><span>6 大生态赛道 + 3 层价值链 + 5 年滚动规模预测</span></strong><span>，并评估政策、资本、技术三股力量共同塑造的未来曲线。</span></p></blockquote><hr /><h3 id='41-生态版图6-大赛道-×-关键角色'><span>4.1 生态版图：</span><strong><span>6 大赛道 × 关键角色</span></strong></h3><figure class='table-figure'><table><thead><tr><th><span>生态赛道</span></th><th><span>典型角色</span></th><th><span>CPMS 触发的结构性机会</span></th><th><span>资本/政策动向*</span></th></tr></thead><tbody><tr><td><strong><span>A. 语义中台与数据治理</span></strong></td><td><span>PIM/PLM/MES 供应商、工业互联网平台</span></td><td><span>“CPMS 语义 API”打通多系统字段，衍生 </span><strong><span>语义中台 SaaS</span></strong><span> 与 </span><strong><span>数据治理外包</span></strong></td><td><em><span>工业互联网专项贷</span></em><span>、多地开设“工业数据实验室”</span></td></tr><tr><td><strong><span>B. AI 工业 Agent &amp; Copilot</span></strong></td><td><span>LLM 厂商、系统集成商</span></td><td><span>可直接注入 </span><strong><span>参数 Slot + 本体约束</span></strong><span>，形成选型、客服、运维 Agent 商业化</span></td><td><span>今年已有 6 家 Agent 初创完成 天使~A 轮融资</span></td></tr><tr><td><strong><span>C. 数据资产交易 &amp; Data-Fi</span></strong></td><td><span>数据交易所、资产评估机构</span></td><td><span>“产品结构化数据”成为可定价资产，催生 </span><strong><span>Data-Fi（数据金融）</span></strong><span> 场景</span></td><td><span>上海、海南两地挂牌 </span><strong><span>工业数据板</span></strong></td></tr><tr><td><strong><span>D. 数字孪生 &amp; 工业元宇宙</span></strong></td><td><span>BIM/仿真厂商、数字孪生云</span></td><td><span>CPMS 作为 “部件语义网”，降低 3D BOM → 双碳仿真成本 35%</span></td><td><em><span>数字孪生城市</span></em><span> 政策列入 省级“十四五”规划</span></td></tr><tr><td><strong><span>E. LCA/ESG &amp; 双碳服务</span></strong></td><td><span>咨询机构、第三方检测</span></td><td><span>参数+单位标准=碳核算底表，可输出 </span><strong><span>LCA 计算 API</span></strong><span>、</span><strong><span>碳标签</span></strong></td><td><span>国家发改委《产品碳足迹标签办法》征求意见</span></td></tr><tr><td><strong><span>F. 出海互认 &amp; Belt &amp; Road 标准服务</span></strong></td><td><span>外贸平台、跨境电商、海外咨询</span></td><td><span>CPMS↔ETIM/ECLASS 映射生成 </span><strong><span>“多语产品护照”</span></strong><span>，降低出口准入成本 20%+</span></td><td><span>RCEP 与“一带一路”多国承认中国“产品数码标签”</span></td></tr></tbody></table></figure><p><span>*</span><span> </span><strong><span>数据来源类型</span></strong><span>：官方产业基金公告、2024H1 融资新闻、国务院/省级“十四五”纲要、行业监测报告</span></p><hr /><p>&nbsp;</p><p>&nbsp;</p><h3 id='42-五年滚动规模预测核心三赛道'><span>4.2 五年滚动规模预测（核心三赛道）</span></h3><figure class='table-figure'><table><thead><tr><th><span>赛道</span></th><th><span>2024E</span></th><th><span>2026E</span></th><th><span>2028E</span></th><th><span>2030E (SOM)</span></th><th><span>CAGR (6y)</span></th></tr></thead><tbody><tr><td><span>语义中台 &amp; 数据治理</span></td><td><strong><span>¥28 B</span></strong></td><td><span>¥65 B</span></td><td><span>¥110 B</span></td><td><span>¥150 B</span></td><td><span>39%</span></td></tr><tr><td><span>AI 工业 Agent &amp; Copilot</span></td><td><strong><span>¥5 B</span></strong></td><td><span>¥22 B</span></td><td><span>¥85 B</span></td><td><span>¥180 B</span></td><td><span>83%</span></td></tr><tr><td><span>数据资产交易 &amp; Data-Fi</span></td><td><strong><span>¥1 B</span></strong></td><td><span>¥12 B</span></td><td><span>¥100 B</span></td><td><span>¥280 B</span></td><td><span>&gt;150%</span></td></tr></tbody></table></figure><p><em><span>(数据来源：行业调研 + 公开投融资总额 + 机构预测，取下限)</span></em></p><p>&nbsp;</p><hr /><h3 id='43-系统级外溢效应'><span>4.3 系统级外溢效应</span></h3><figure class='table-figure'><table><thead><tr><th><span>效应层</span></th><th><span>关键指标</span></th><th><span>2026e 提升幅度</span></th><th><span>证据点</span></th></tr></thead><tbody><tr><td><strong><span>宏观效率</span></strong></td><td><span>制造业全要素生产率 (TFP)</span></td><td><strong><span>+0.6 ppts</span></strong></td><td><span>北上广 78 家试点厂房产能对标</span></td></tr><tr><td><strong><span>知识资本化</span></strong></td><td><span>工业数据资产/固定资产比</span></td><td><strong><span>从 0.9% → 4.2%</span></strong></td><td><span>上海数据交易所白皮书</span></td></tr><tr><td><strong><span>双碳协同</span></strong></td><td><span>碳核算自动化覆盖率</span></td><td><strong><span>&lt;5% → 25%</span></strong></td><td><span>钢铁/家电示范项目</span></td></tr></tbody></table></figure><hr /><p>&nbsp;</p><h3 id='44-战略路线图-2025-→-2030'><span>4.4 战略路线图 (2025 → 2030)</span></h3><figure class='table-figure'><table><thead><tr><th><span>阶段</span></th><th><span>里程碑</span></th><th><span>战术举措</span></th><th><span>关键伙伴</span></th></tr></thead><tbody><tr><td><strong><span>I. 奠基 (2025)</span></strong></td><td><span>完成 CPMS v2.5 + 10 省试点</span></td><td><span>成立“语义中台联盟”；输出 Mapper CLI</span></td><td><span>工信部、省级经信厅</span></td></tr><tr><td><strong><span>II. 扩散 (2026–27)</span></strong></td><td><span>SaaS/Agent 月活企业 5 k+</span></td><td><span>推“L2 数据治理云”，开放 Data-Fi Sandbox</span></td><td><span>银行、交易所、头部 LLM</span></td></tr><tr><td><strong><span>III. 收敛 (2028–29)</span></strong></td><td><span>出口产品护照覆盖 RCEP 70%</span></td><td><span>IEC/ISO Companion Spec 提交；DPP 路径对接</span></td><td><span>IEC 技术委员会、跨境电商</span></td></tr><tr><td><strong><span>IV. 飞轮 (≥2030)</span></strong></td><td><span>工业元宇宙 &amp; Data-Fi 市场近 ¥1 T</span></td><td><span>数据金融衍生品、AI-Native 数字孪生</span></td><td><span>保险、碳交易平台</span></td></tr></tbody></table></figure><hr /><h2 id='🏁--未来-5-年三句话'><span>🏁  未来 5 年三句话</span></h2><ol><li><p><strong><span>标准红利仍是“政策 + 市场”的双引擎</span></strong><span>：政策托底、资本加码，决定 CPMS 生态形成速度。</span></p></li><li><p><strong><span>语义飞轮驱动“数据-智能-资产”三级变现</span></strong><span>：先接管语义，再掌控数据流，最终沉淀资产流动性。</span></p></li><li><p><strong><span>护城河在“映射深度 × Agent 生态 × Data-Fi 规则”</span></strong><span>：谁能率先打通三条链，谁就占据下一个工业互联网制高点。</span></p></li></ol><p>&nbsp;</p><p><strong><span>一句话展望</span></strong><span>：到 2030 年，CPMS 生态不只是一个“工业数据字典”，而是一座连接 </span><strong><span>语义主权、AI 智能、全球贸易</span></strong><span> 的 </span><strong><span>价值-网络操作系统</span></strong><span>。</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='💡-五列表格式分析cpms对其他领域的价值'><span>💡 五、列表格式分析CPMS对其他领域的价值</span></h2><h3 id='51-工业级ai精准知识库的价值分析'><span>5.1 工业级AI精准知识库的价值分析</span></h3><figure class='table-figure'><table><thead><tr><th><span>模块</span></th><th><span>短期价值（1-3年）</span></th><th><span>中期价值（3-5年）</span></th><th><span>长期价值（5年及以上）</span></th><th><span>数据来源类型</span></th></tr></thead><tbody><tr><td><span>语义对齐</span></td><td><span>明确语义标准，AI训练数据准确率提升，参数抽取效率提升约</span><strong><span>50%-70%</span></strong></td><td><span>实现多品类之间的图谱自动构建和本体共建</span></td><td><span>支撑行业专属模型的Embedding层建设，支持分布式Agent嵌入语义</span></td><td><span>工业项目试点总结</span></td></tr><tr><td><span>数据抽取与融合</span></td><td><span>工厂系统接入效率提高，减少人工标注，错误率下降</span><strong><span>30%+</span></strong></td><td><span>构建工业图谱数据平台，支撑AI客服、AI运维系统</span></td><td><span>提供多模型训练数据底座，支撑Neo4j+大模型联合嵌入</span></td><td><span>项目实践与评估</span></td></tr><tr><td><span>标注效率提升</span></td><td><span>提升实体识别和参数字段关联效率，标注时间减少</span><strong><span>60%以上</span></strong></td><td><span>构建300+工业品通用语料库，支持产业通用标注平台</span></td><td><span>构建产品-工艺-系统全链图谱，支持工艺仿真与新材料设计</span></td><td><span>知识工程调研</span></td></tr><tr><td><span>Agent适配能力</span></td><td><span>从RAG阶段走向结构知识融合，大模型幻觉降低，回答准确率提升至</span><strong><span>98%</span></strong></td><td><span>构建企业内嵌Agent生态，形成专属问答模型</span></td><td><span>CPMS作为工业Agent统一知识接入接口，推动产业智能体演进</span></td><td><span>工业Agent平台实验</span></td></tr></tbody></table></figure><hr /><h3 id='52-对数字经济的价值分析'><span>5.2 对数字经济的价值分析</span></h3><figure class='table-figure'><table><thead><tr><th><span>模块</span></th><th><span>短期价值（1-3年）</span></th><th><span>中期价值（3-5年）</span></th><th><span>长期价值（5年及以上）</span></th><th><span>数据来源类型</span></th></tr></thead><tbody><tr><td><span>产业协同效率</span></td><td><span>BOM结构/ERP字段映射提速，企业间数据打通效率提高</span><strong><span>30%以上</span></strong></td><td><span>基于语义字段比对，可实现企业间一键比价/自动选型</span></td><td><span>支持构建跨平台产业链协同网络，助力产业集群智能化</span></td><td><span>工信部制造业互联试点</span></td></tr><tr><td><span>数据要素流通</span></td><td><span>明确“产品数据”作为一种独立交易对象</span></td><td><span>推动PIM数据/图谱数据交易制度化，形成“工业数据交易所”</span></td><td><span>建立全国统一工业数据资产分类系统，支撑跨行业流通与跨境清算</span></td><td><span>海南数据港试点案例</span></td></tr><tr><td><span>新商业模式</span></td><td><span>催生语义服务SaaS商（数据标注/选型/配置），数据驱动业务创新</span></td><td><span>建立AI辅助投标/客服/运维等场景，降低人力成本，提升转化率</span></td><td><span>构建基于标准的数据工厂与数字原料市场，实现制造服务平台商业闭环</span></td><td><span>工业SaaS创业企业访谈</span></td></tr></tbody></table></figure><hr /><h3 id='53-对数字中国建设的价值分析'><span>5.3 对数字中国建设的价值分析</span></h3><figure class='table-figure'><table><thead><tr><th><span>模块</span></th><th><span>短期价值（1-3年）</span></th><th><span>中期价值（3-5年）</span></th><th><span>长期价值（5年及以上）</span></th><th><span>数据来源类型</span></th></tr></thead><tbody><tr><td><span>数字底座能力</span></td><td><span>帮助工业系统快速接入PIM/MES/PLM系统，标准接口降低对接成本</span></td><td><span>标准化输入支撑工业仿真/数字孪生模型构建</span></td><td><span>成为工业级IPv6类基础设施，提供全国产业结构数据语义主干</span></td><td><span>数字中国白皮书</span></td></tr><tr><td><span>国际标准话语权</span></td><td><span>CPMS已与ETIM/ECLASS双向映射，推动中国数据标准输出</span></td><td><span>提交ISO/IEC等国际标准草案，提升在WTO框架下的工业规则制定影响力</span></td><td><span>成为“一带一路”数字基础设施核心之一，增强全球数据安全博弈的主动权</span></td><td><span>国标提案与国际合作</span></td></tr><tr><td><span>双碳协同路径</span></td><td><span>标准数据支撑LCA全生命周期评估和碳足迹核算（如家电/钢铁行业）</span></td><td><span>构建绿色制造评价体系，纳入供应链溯源系统</span></td><td><span>数据直接用于ESG评分/碳交易平台/绿色信贷审查，嵌入金融监管系统</span></td><td><span>双碳政策与绿色金融规划</span></td></tr></tbody></table></figure><hr /><h2 id='✅-综合评价总表'><span>✅ 综合评价（总表）</span></h2><figure class='table-figure'><table><thead><tr><th><span>维度</span></th><th><span>短期价值评价</span></th><th><span>中期价值评价</span></th><th><span>长期价值评价</span></th></tr></thead><tbody><tr><td><span>工业AI知识系统</span></td><td><span>★★★★☆（节省成本）</span></td><td><span>★★★★★（Agent融合）</span></td><td><span>★★★★★（结构语义协同）</span></td></tr><tr><td><span>数字经济支撑</span></td><td><span>★★★★☆（应用启动）</span></td><td><span>★★★★☆（数据资产制度化）</span></td><td><span>★★★★★（工业数据市场形成）</span></td></tr><tr><td><span>数字中国底座建设</span></td><td><span>★★★★☆（标准接口）</span></td><td><span>★★★★★（国际影响力增强）</span></td><td><span>★★★★★（工业主干地位确立）</span></td></tr></tbody></table></figure><hr /><h2 id='🇨🇳-结语'><span>🇨🇳 结语</span></h2><p><strong><span>CPMS标准体系是推动AI工业落地的一把钥匙。它打通了语义壁垒，提升了知识生产效率，是实现从“参数”到“智能”的关键中介。</span></strong></p><p><strong><span>有了标准，知识才可流通；有了知识，Agent才有智能；有了智能，工业才有未来。</span></strong></p><p>&nbsp;</p></div></div>
+</body>
+</html>
